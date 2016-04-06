@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app='pokemonGenerator'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pokemon</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/modernizr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <body ng-controller="MainController">
+
+  <div class="row">
+    <div class="large-6 small-12 columns">
+      <br>
+      <h2 style="text-align: center;">Generate a random Pokemon!</h2>
+      <br>
+      <button ng-click="generatePokemon()"
+              class="button expand">
+        Generate
+      </button>
+      <div style="text-align: center">
+        <img height="25%" width="25%"
+             ng-show="!pokemon.name && !img && loadingName"
+               src="https://d13yacurqjgara.cloudfront.net/users/12755/screenshots/1037374/hex-loader2.gif"
+             alt="loading">
+        <img ng-show="img && pokemon.name"
+             ng-src="{{ img }}"
+             alt="{{ pokemon.name }}">
+        <h3 ng-show="img && pokemon.name">
+          {{ pokemon.name }}
+        </h3>
+      </div>
+    </div>
+
+    <div class="large-6 small-12 columns">
+      <br>
+      <h2 style="text-align: center;">Generate a random Pokemon Move!</h2>
+      <br>
+      <button ng-click="generateMove()"
+              class="button secondary expand">
+        Generate
+      </button>
+      <div style="text-align: center">
+        <img height="25%" width="25%"
+             ng-show="!move && loadingMove"
+               src="https://d13yacurqjgara.cloudfront.net/users/12755/screenshots/1037374/hex-loader2.gif"
+             alt="loading">
+        <h3>
+          {{ move }}
+        </h3>
+    </div>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- <script type="text/javascript" src="./home/home.controller.js"></script> -->
+    <!-- <script type="text/javascript" src="./js/http.factory.js"></script> -->
+  </body>
+</html>
