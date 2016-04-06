@@ -1,7 +1,9 @@
-// sample angular code
-
-var app = angular.module('myApp', []);
-
-app.controller('myController', ['$scope', function($scope) {
-  $scope.greeting = "Hello World!";
-}]);
+angular.module('app', ['ngRoute'])
+  .config(function($routeProvider){
+    $routeProvider
+      .when('/', {
+        templateUrl: 'home/home.html',
+        controller: 'HomeController'
+      })
+      .otherwise({redirectTo: '/'});
+    });
